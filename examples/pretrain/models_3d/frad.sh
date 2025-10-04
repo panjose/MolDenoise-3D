@@ -1,0 +1,1 @@
+python -B pretrain_repr.py examples/pretrain/models_3d/frad.yaml

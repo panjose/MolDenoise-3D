@@ -1,0 +1,46 @@
+dataset: QM9
+dataset_root: data/qm9
+dataset_arg: homo
+energy_weight: 1.0
+force_weight: 1.0
+position_noise_scale: 0.005
+denoising_weight: 0.1
+denoising_only: false
+
+model: equivariant-transformer
+embedding_dimension: 256
+num_layers: 8
+num_rbf: 64
+num_heads: 8
+derivative: false
+cutoff_lower: 0.0
+cutoff_upper: 5.0
+atom_filter: -1
+max_z: 100
+max_num_neighbors: 32
+standardize: true
+
+train_batch_size: 128
+val_batch_size: 128
+test_batch_size: 128
+num_epochs: 350
+num_steps: 300000
+lr: 0.0004
+lr_warmup_steps: 10000
+lr_cosine_length: 300000
+early_stopping_patience: 1500
+weight_decay: 0.0
+ema_alpha_y: 1.0
+ema_alpha_dy: 1.0
+device: cuda:2
+num_nodes: 1
+fp16: true
+log_dir: save/
+train_size: null
+val_size: 0.08
+test_size: 0.08
+seed: 1
+num_workers: 6
+job_id: finetune
+pretrained_model: save/pretrain/2025-09-05_11-49-54/best_model/model.pt
+

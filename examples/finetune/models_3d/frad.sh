@@ -1,0 +1,1 @@
+python -B finetune_repr.py examples/finetune/models_3d/frad.yaml

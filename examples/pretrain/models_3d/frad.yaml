@@ -1,0 +1,46 @@
+dataset: PCQM4MV2
+dataset_root: data/pcq
+dataset_arg: null
+energy_weight: 0.0
+force_weight: 1.0
+position_noise_scale: 0.04
+denoising_weight: 1.0
+denoising_only: true
+
+model: equivariant-transformer
+embedding_dimension: 256
+num_layers: 8
+num_rbf: 64
+num_heads: 8
+derivative: false
+cutoff_lower: 0.0
+cutoff_upper: 5.0
+atom_filter: -1
+max_z: 100
+max_num_neighbors: 32
+standardize: false
+
+train_batch_size: 70
+val_batch_size: 70
+test_batch_size: 70
+num_epochs: 10
+num_steps: 400000
+lr: 0.0004
+lr_warmup_steps: 10000
+lr_cosine_length: 400000
+early_stopping_patience: 150
+weight_decay: 0.0
+ema_alpha_y: 1.0
+ema_alpha_dy: 1.0
+device: cuda:0
+num_nodes: 1
+fp16: true
+log_dir: save/
+train_size: null
+val_size: 0.05
+test_size: 0.05
+seed: 1
+num_workers: 6
+job_id: pretrain
+pretrained_model: null
+
